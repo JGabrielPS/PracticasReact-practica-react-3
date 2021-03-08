@@ -1,17 +1,20 @@
-import {
-  Route,
-  Switch,
-  NavLink,
-  Link,
-  BrowserRouter as Router,
-} from "react-router-dom";
+import { Route, Switch, Link, BrowserRouter as Router } from "react-router-dom";
+
+import Base from "./components/Base";
+import Inicio from "./components/Inicio";
 
 function App() {
   return (
     <Router>
+      <Link to="/">Base</Link>
+      <Link to="/inicio">Inicio</Link>
       <Switch>
-        <Route path="/inicio">Estas en el inicio</Route>
-        <Route path="/">Esta es la URL base</Route>
+        <Route path="/inicio/:id/:nombre/:edad">
+          <Inicio />
+        </Route>
+        <Route path="/">
+          <Base />
+        </Route>
       </Switch>
     </Router>
   );
