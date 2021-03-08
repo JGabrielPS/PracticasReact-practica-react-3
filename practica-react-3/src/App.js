@@ -1,19 +1,22 @@
 import { Route, Switch, Link, BrowserRouter as Router } from "react-router-dom";
 
-import Base from "./components/Base";
-import Inicio from "./components/Inicio";
+// import Base from "./components/Base";
+// import Inicio from "./components/Inicio";
+import Usuarios from "./components/Usuarios";
+import Usuario from "./components/Usuario";
 
 function App() {
   return (
     <Router>
-      <Link to="/">Base</Link>
-      <Link to="/inicio">Inicio</Link>
+      <Link to="/">
+        Usuarios
+      </Link>
       <Switch>
-        <Route path="/inicio/:id/:nombre/:edad">
-          <Inicio />
+        <Route exact path="/">
+          <Usuarios />
         </Route>
-        <Route path="/">
-          <Base />
+        <Route path="/usuario/:id">
+          <Usuario />
         </Route>
       </Switch>
     </Router>
